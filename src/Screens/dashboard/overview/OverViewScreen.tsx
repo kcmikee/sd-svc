@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/src/components/ui/button";
 import { useGetUserDataHashes } from "@/src/hooks/userHook/useUser";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useAccount } from "wagmi";
 import dynamic from "next/dynamic";
 import Web3 from "web3";
@@ -18,8 +18,9 @@ const DataTable = dynamic(
 
 function OverViewScreen() {
   const { address } = useAccount();
-  const [web3, setWeb3] = React.useState<Web3 | null>(null);
-  const [account, setAccount] = React.useState<string | null>(null);
+  const [web3, setWeb3] = useState<Web3 | null>(null);
+  const [account, setAccount] = useState<string | null>(null);
+
   const { data: userHashes, refetch: getHash } = useGetUserDataHashes();
 
   const formattedAddress = useMemo(() => {
@@ -27,7 +28,7 @@ function OverViewScreen() {
     return `${address.substring(0, 6)}...${address.substring(38, 42)}`;
   }, [address]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const initializeWeb3 = async () => {
       if (typeof window.ethereum !== "undefined") {
         try {
