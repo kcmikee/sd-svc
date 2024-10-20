@@ -43,7 +43,7 @@ const Sidebar = () => {
       },
       {
         title: "Verification Requests",
-        href: "/dashboard/verification-requests",
+        href: "/dashboard/data-verification",
         icon: NoteFavorite,
       },
       {
