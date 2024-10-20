@@ -48,17 +48,22 @@ const Sidebar = () => {
       },
       {
         title: "Settings",
-        href: "/dashboard/settings",
+        // href: "/dashboard/settings",
+        href: "#",
         icon: Setting2,
       },
       {
         title: "Support",
-        href: "/dashboard/support",
+        // href: "/dashboard/support",
+        href: "#",
+
         icon: Messages2,
       },
       {
         title: "Notifications",
-        href: "/dashboard/notifications",
+        // href: "/dashboard/notifications",
+        href: "#",
+
         icon: Notification,
       },
     ],
