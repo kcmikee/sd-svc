@@ -47,7 +47,7 @@ function VerificationStatusScreen() {
         <div className="px-6 py-5 border-b">
           <p className="font-semibold text-sm">Verification History</p>
         </div>
-        <DataTable userHashes={userHashes || []} getHash={getHash} hideFooter />
+        <DataTable userHashes={userHashes || []} getHash={getHash} />
       </div>
     </div>
   );
